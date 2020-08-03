@@ -5,7 +5,38 @@ public class Trigonometric {
   public static void main (String [] args){
 
   Scanner keyboard = new Scanner(System.in);
-  int operation = keyboard.nextInt();
-  System.out.println(operation);
+  System.out.println();
+  System.out.println("Trigonometric Calculator");
+
+      while(true) {
+
+        System.out.println();
+        System.out.println("Select an operation:");
+      System.out.println("-------------------");
+        System.out.println("1) Trigonometric Operations");
+      System.out.println("2) Inverted Trigonometric Operations");
+      System.out.println("3) Hyperbolic Trigonometric Operations");
+      System.out.println("4) Quit Calculator");
+
+      int operation = keyboard.nextInt();
+
+
+        if (operation == 1) {
+        break;
+        } else if (operation == 2) {
+        break;
+        } else if (operation == 3) {
+        break;
+        } else if (operation == 4) {
+            break;
+        } else {
+        System.out.println();
+        System.out.println("Please select a valid option");
+      }
+
+      }
+
+
+
   }
 }
