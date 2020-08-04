@@ -41,7 +41,7 @@ public class Trigonometric {
   }
   public static double trigonometric(){
     Scanner keyboard = new Scanner(System.in);
-    DecimalFormat format1 = new DecimalFormat("#0.0");
+    DecimalFormat format1 = new DecimalFormat("#0.00");
     System.out.println("Angle: ");
     int angle = keyboard.nextInt();
 
@@ -53,11 +53,26 @@ public class Trigonometric {
 	    if (operanding == 1) {
         double toRadians = (angle * Math.PI)/180;
         double result = Math.sin(toRadians);
+        System.out.println();
+        System.out.println("----------------------------------");
         System.out.println("sin("+ angle + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
         break;
 	    } else if (operanding == 2) {
+        double toRadians = (angle * Math.PI)/180;
+        double result = Math.cos(toRadians);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("cos("+ angle + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
         break;
 	    } else if (operanding == 3) {
+        double toRadians = (angle * Math.PI)/180;
+        double result = Math.tan(toRadians);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("tan("+ angle + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
         break;
 	    } else {
 
@@ -66,7 +81,7 @@ public class Trigonometric {
       }
      
 	  }
-    return 0.0;
+    return angle;
   }
 
 
