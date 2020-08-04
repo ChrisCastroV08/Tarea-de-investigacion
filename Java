@@ -1,42 +1,73 @@
 import java.util.*;
-
-
+import java.text.DecimalFormat;
 public class Trigonometric {
+  
   public static void main (String [] args){
-
+  
   Scanner keyboard = new Scanner(System.in);
   System.out.println();
   System.out.println("Trigonometric Calculator");
-
-      while(true) {
-
-        System.out.println();
-        System.out.println("Select an operation:");
+	
+	  while(true) {
+    
+	    System.out.println();
+	    System.out.println("Select a trigonometric operation:");
       System.out.println("-------------------");
-        System.out.println("1) Trigonometric Operations");
+	    System.out.println("1) Trigonometric Operations");
       System.out.println("2) Inverted Trigonometric Operations");
       System.out.println("3) Hyperbolic Trigonometric Operations");
       System.out.println("4) Quit Calculator");
-
+	
       int operation = keyboard.nextInt();
-
-
-        if (operation == 1) {
+	    
+      
+	    if (operation == 1) {
+        trigonometric();
+	    } else if (operation == 2) {
         break;
-        } else if (operation == 2) {
+	    } else if (operation == 3) {
         break;
-        } else if (operation == 3) {
-        break;
-        } else if (operation == 4) {
-            break;
-        } else {
+	    } else if (operation == 4) {
+		    break;
+	    } else {
         System.out.println();
         System.out.println("Please select a valid option");
       }
+     
+	  }
 
-      }
-
-
-
+    
+  
   }
+  public static double trigonometric(){
+    Scanner keyboard = new Scanner(System.in);
+    DecimalFormat format1 = new DecimalFormat("#0.0");
+    System.out.println("Angle: ");
+    int angle = keyboard.nextInt();
+
+    while(true) {
+      System.out.println("Select which operation would you like to use: ");
+      System.out.println("1)sin(" + angle + "), 2)cos(" + angle + "), 3)tan(" + angle + ")");
+      int operanding = keyboard.nextInt();
+	    
+	    if (operanding == 1) {
+        double toRadians = (angle * Math.PI)/180;
+        double result = Math.sin(toRadians);
+        System.out.println("sin("+ angle + ") equals to "+ format1.format(result));
+        break;
+	    } else if (operanding == 2) {
+        break;
+	    } else if (operanding == 3) {
+        break;
+	    } else {
+
+        System.out.println();
+        System.out.println("Please select a valid option");
+      }
+     
+	  }
+    return 0.0;
+  }
+
+
 }
