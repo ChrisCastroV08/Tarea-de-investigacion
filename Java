@@ -24,7 +24,7 @@ public class Trigonometric {
 	    if (operation == 1) {
         trigonometric();
 	    } else if (operation == 2) {
-        break;
+        inverted_trigonometric();
 	    } else if (operation == 3) {
         break;
 	    } else if (operation == 4) {
@@ -43,10 +43,10 @@ public class Trigonometric {
     Scanner keyboard = new Scanner(System.in);
     DecimalFormat format1 = new DecimalFormat("#0.00");
     System.out.println("Angle: ");
-    int angle = keyboard.nextInt();
+    double angle = keyboard.nextDouble();
 
     while(true) {
-      System.out.println("Select which operation would you like to use: ");
+      System.out.println("Type in which operation would you like to use: ");
       System.out.println("1)sin(" + angle + "), 2)cos(" + angle + "), 3)tan(" + angle + ")");
       int operanding = keyboard.nextInt();
 	    
@@ -83,6 +83,49 @@ public class Trigonometric {
 	  }
     return angle;
   }
+  public static double inverted_trigonometric (){
+    Scanner keyboard = new Scanner(System.in);
+    DecimalFormat format1 = new DecimalFormat("#0.00");
+    System.out.println("Value: ");
+    double value = keyboard.nextDouble();
 
+    while(true) {
+      System.out.println("Type in which operation would you like to use: ");
+      System.out.println("1)arcsin(" + value + "), 2)arccos(" + value + "), 3)arctan(" + value + ")");
+      int operanding = keyboard.nextInt();
+	    
+	    if (operanding == 1) {
+        double toRadians = Math.asin(value);
+        double result = Math.toDegrees(toRadians);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("arcsin("+ value + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
+        break;
+	    } else if (operanding == 2) {
+        double toRadians = Math.acos(value);
+        double result = Math.toDegrees(toRadians);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("arccos("+ value + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
+        break;
+	    } else if (operanding == 3) {
+        double toRadians = Math.atan(value);
+        double result = Math.toDegrees(toRadians);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("arctan("+ value + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
+        break;
+	    } else {
+
+        System.out.println();
+        System.out.println("Please select a valid option");
+      }
+     
+	  }
+    return value;
+  }
 
 }
