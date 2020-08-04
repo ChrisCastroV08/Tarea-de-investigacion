@@ -26,8 +26,10 @@ public class Trigonometric {
 	    } else if (operation == 2) {
         inverted_trigonometric();
 	    } else if (operation == 3) {
-        break;
+        hyperbolic_trigonometric();
 	    } else if (operation == 4) {
+        System.out.println();
+        System.out.println("GoodBye!");
 		    break;
 	    } else {
         System.out.println();
@@ -44,6 +46,7 @@ public class Trigonometric {
     DecimalFormat format1 = new DecimalFormat("#0.00");
     System.out.println("Angle: ");
     double angle = keyboard.nextDouble();
+    
 
     while(true) {
       System.out.println("Type in which operation would you like to use: ");
@@ -116,6 +119,47 @@ public class Trigonometric {
         System.out.println();
         System.out.println("----------------------------------");
         System.out.println("arctan("+ value + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
+        break;
+	    } else {
+
+        System.out.println();
+        System.out.println("Please select a valid option");
+      }
+     
+	  }
+    return value;
+  }
+  public static double hyperbolic_trigonometric(){
+    Scanner keyboard = new Scanner(System.in);
+    DecimalFormat format1 = new DecimalFormat("#0.00");
+    System.out.println("Value: ");
+    double value = keyboard.nextDouble();
+
+    while(true) {
+      System.out.println("Type in which operation would you like to use: ");
+      System.out.println("1)sinh(" + value + "), 2)cosh(" + value + "), 3)tanh(" + value + ")");
+      int operanding = keyboard.nextInt();
+	    
+	    if (operanding == 1) {
+        double result = Math.sinh(value);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("sinh("+ value + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
+        break;
+	    } else if (operanding == 2) {
+        double result = Math.cosh(value);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("cosh("+ value + ") equals to "+ format1.format(result));
+        System.out.println("----------------------------------");
+        break;
+	    } else if (operanding == 3) {
+        double result = Math.tanh(value);
+        System.out.println();
+        System.out.println("----------------------------------");
+        System.out.println("tanh("+ value + ") equals to "+ format1.format(result));
         System.out.println("----------------------------------");
         break;
 	    } else {
