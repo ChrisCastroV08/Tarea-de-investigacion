@@ -1,15 +1,23 @@
+//This is the start of the code commentary
+
+//We first import the necessary libraries for the program
 import java.util.*;
 import java.text.DecimalFormat;
+//Then, we create the class called "Trigonometric"
 public class Trigonometric {
-  
+  //All the methods will be placed here
+
+  //This is the main method, where the program starts
   public static void main (String [] args){
   
+  //We call the function Scanner to get access to whatever input the user presses in their keyboard
   Scanner keyboard = new Scanner(System.in);
   System.out.println();
   System.out.println("Trigonometric Calculator");
 	
 	  while(true) {
     
+    //Here we create the main menu with all the options...
 	    System.out.println();
 	    System.out.println("Select a trigonometric operation:");
       System.out.println("-------------------");
@@ -18,9 +26,9 @@ public class Trigonometric {
       System.out.println("3) Hyperbolic Trigonometric Operations");
       System.out.println("4) Quit Calculator");
 	
+  //And here we wait for an (integer) input of the user's keyboard, basically like a "Choose an option" menu.
       int operation = keyboard.nextInt();
-	    
-      
+	    //Then we evaluate what the user entered and enter the specific method of the specific selection of the user.
 	    if (operation == 1) {
         trigonometric();
 	    } else if (operation == 2) {
@@ -28,10 +36,12 @@ public class Trigonometric {
 	    } else if (operation == 3) {
         hyperbolic_trigonometric();
 	    } else if (operation == 4) {
+        //In case the user wants to leave, we print a message and the program stops.
         System.out.println();
         System.out.println("GoodBye!");
 		    break;
 	    } else {
+        //If the value the user wrote is greater than the options of the menu, we ask him to try again.
         System.out.println();
         System.out.println("Please select a valid option");
       }
@@ -41,18 +51,21 @@ public class Trigonometric {
     
   
   }
+  //This method is for all the trigonometric operations
   public static double trigonometric(){
     Scanner keyboard = new Scanner(System.in);
     DecimalFormat format1 = new DecimalFormat("#0.00");
     System.out.println("Angle: ");
+    //We ask for the user to insert an angle value (integer or double).
     double angle = keyboard.nextDouble();
     
 
     while(true) {
+      //Then we ask him what trigonometric operation s/he wants to use...
       System.out.println("Type in which operation would you like to use: ");
       System.out.println("1)sin(" + angle + "), 2)cos(" + angle + "), 3)tan(" + angle + ")");
       int operanding = keyboard.nextInt();
-	    
+      //And we evaluate the option the user selected
 	    if (operanding == 1) {
         double toRadians = (angle * Math.PI)/180;
         double result = Math.sin(toRadians);
@@ -77,26 +90,35 @@ public class Trigonometric {
         System.out.println("tan("+ angle + ") equals to "+ format1.format(result));
         System.out.println("----------------------------------");
         break;
+        /*
+      In all of those operations, we convert the given angle
+      to radians, so we can get the correct result to whatever operation the user
+      selected (aka. sin(), cos or tan). Then we print the result.
+        */
 	    } else {
-
+        //Again, if the value the user wrote is greater than the options of the submenu, we ask him to try again.
         System.out.println();
         System.out.println("Please select a valid option");
       }
      
 	  }
+    //And here we return back to the menu
     return angle;
   }
+  //Now, this method is for all the inverted trigonometric operation
   public static double inverted_trigonometric (){
     Scanner keyboard = new Scanner(System.in);
     DecimalFormat format1 = new DecimalFormat("#0.00");
+    //We ask for a value(integer or double)
     System.out.println("Value: ");
     double value = keyboard.nextDouble();
 
     while(true) {
       System.out.println("Type in which operation would you like to use: ");
+      //Again we ask for what operation they would like to use...
       System.out.println("1)arcsin(" + value + "), 2)arccos(" + value + "), 3)arctan(" + value + ")");
       int operanding = keyboard.nextInt();
-	    
+	    //And again we evaluate the option the user selected
 	    if (operanding == 1) {
         double toRadians = Math.asin(value);
         double result = Math.toDegrees(toRadians);
@@ -121,26 +143,35 @@ public class Trigonometric {
         System.out.println("arctan("+ value + ") equals to "+ format1.format(result));
         System.out.println("----------------------------------");
         break;
+        /*
+      First, with the given value, we store the result of it with whatever was the user's
+      option (aka. arcsin(value), arccos(value) or arctan(value)). Then we transform that
+      result to degrees, to get the correct result. Then it gets printed.
+        */
 	    } else {
-
+        //Again, if the value the user wrote is greater than the options of the submenu, we ask him to try again.
         System.out.println();
         System.out.println("Please select a valid option");
       }
      
 	  }
+    //And here we return back to the menu again.
     return value;
   }
+  //Finally, this method is for the hyperbolic_trigonometric operations.
   public static double hyperbolic_trigonometric(){
     Scanner keyboard = new Scanner(System.in);
     DecimalFormat format1 = new DecimalFormat("#0.00");
     System.out.println("Value: ");
+    //We ask for a value(integer or double)
     double value = keyboard.nextDouble();
 
     while(true) {
       System.out.println("Type in which operation would you like to use: ");
+      //Again we ask for what operation they would like to use...
       System.out.println("1)sinh(" + value + "), 2)cosh(" + value + "), 3)tanh(" + value + ")");
       int operanding = keyboard.nextInt();
-	    
+	    //And again we evaluate the option the user selected
 	    if (operanding == 1) {
         double result = Math.sinh(value);
         System.out.println();
@@ -162,14 +193,21 @@ public class Trigonometric {
         System.out.println("tanh("+ value + ") equals to "+ format1.format(result));
         System.out.println("----------------------------------");
         break;
-	    } else {
+        /*
+      First, with the given value, we store the result of it with whatever was the user's
+      option (aka. sinh(value), cosh(value) or tanh(value)). Then it gets printed.
+        */
 
+	    } else {
+        //Again, if the value the user wrote is greater than the options of the submenu, we ask him to try again.
         System.out.println();
         System.out.println("Please select a valid option");
       }
      
 	  }
+    //And here we return back to the menu, yet again.
     return value;
   }
 
 }
+//End of the program
